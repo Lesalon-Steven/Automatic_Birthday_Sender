@@ -20,7 +20,7 @@ if (today) in birthdays:
     file_path = f"letter_{random.randint(1, 3)}.txt"
     with open(file_path) as letter:
         contents = letter.read()
-        contents.replace("[NAME]", person["name"])
+        contents = contents.replace("[NAME]", person["name"])
 
     with smtplib.SMTP("smtp.gmail.com") as connection:
         connection.starttls()
